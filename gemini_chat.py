@@ -4,13 +4,14 @@ import os
 
 class GeminiChat:
 
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise ValueError("Gemini api key not set")
-    genai.configure(api_key=api_key)
-
     def __init__(self):
         self.chat_history = []
+
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("Gemini api key not set")
+        genai.configure(api_key=api_key)
+
         client = genai.Client()
         self.response = client.models.generate_content(
             model="gemini-2.5-flash",
