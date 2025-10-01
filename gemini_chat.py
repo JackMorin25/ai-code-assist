@@ -1,18 +1,22 @@
-from google import genai
+import google.generativeai as genai
 import os
+from dotenv import load_dotenv
 
 
 class GeminiChat:
 
     def __init__(self):
         self.chat_history = []
-
+        load_dotenv()
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
-            raise ValueError("Gemini api key not set")
+            raise ValueError("GEMINI_API_KEY not found")
+
         genai.configure(api_key=api_key)
 
-        self.model = genai.GenerativeModel("gemini-2.5-flash")
+        self.model = genai.GenerativeModel(
+            model_name="gemini-2.5-flash",
+        )
 
         self.system_prompt = (
             '''
