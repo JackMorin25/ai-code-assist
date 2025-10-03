@@ -1,11 +1,14 @@
 from gemini_chat import GeminiChat
 from audio_input import SpeechManager
+from eleven_labs import ElevenLabsManager
 import keyboard
 import time
 
 
 gemini_handler = GeminiChat()
 speech_manager = SpeechManager()
+eleven_manager = ElevenLabsManager()
+
 
 while True:
     if keyboard.read_key() != 'f4':
@@ -18,6 +21,8 @@ while True:
         print("speak up lil pup")
         continue
     # take gemini response turn it into voice
-    gemini_handler.chat(prompt)
+    response = gemini_handler.chat(prompt)
 
+    print(response)
     # play voice mp3
+    eleven_manager.play_text_to_speech(response)

@@ -34,4 +34,4 @@ class GeminiChat:
             {"role": "user", "parts": prompt}
         ])
         self.chat_history.append(response.text)
-        print(response.text)
+        return response.text
