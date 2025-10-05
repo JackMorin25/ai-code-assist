@@ -1,6 +1,7 @@
 from gemini_chat import GeminiChat
 from audio_input import SpeechManager
 from eleven_labs import ElevenLabsManager
+from audio_manager import AudiManager
 import keyboard
 import time
 
@@ -8,7 +9,7 @@ import time
 gemini_handler = GeminiChat()
 speech_manager = SpeechManager()
 eleven_manager = ElevenLabsManager()
-
+audio_manager = AudiManager()
 
 while True:
     if keyboard.read_key() != 'f4':
@@ -25,4 +26,6 @@ while True:
 
     print(response)
     # play voice mp3
-    eleven_manager.play_text_to_speech(response)
+    eleven_manager.save_text_to_speech(response)
+
+    audio_manager.play("./output.mp3")
