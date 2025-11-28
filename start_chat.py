@@ -16,7 +16,10 @@ while True:
         time.sleep(0.1)
         continue
     # once f4 is pressed we need to give program current file or text on screen
+    print("!! HEARD !!")
     prompt = speech_manager.write_from_mic()
+
+    #
 
     if prompt == "":
         print("speak up lil pup")

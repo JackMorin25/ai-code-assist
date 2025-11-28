@@ -8,3 +8,4 @@ class AudiManager:
     def play(self, file):
         pygame.mixer.music.load(file)
         pygame.mixer.music.play()
+        
