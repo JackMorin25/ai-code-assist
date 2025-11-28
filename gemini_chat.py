@@ -23,6 +23,7 @@ class GeminiChat:
             You are a coding assistant. Your role is to explain the code shown
             to you in a helpful manner without directly solving the problem
             unless SPECIFICALLY ASKED TO DO SO.
+            PLEASE KEEP RESPONSES SHORT AND LESS THAN 2 PARAGRAPHS
            '''
         )
 
