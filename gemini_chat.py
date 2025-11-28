@@ -23,9 +23,7 @@ class GeminiChat:
             You are a coding assistant. Your role is to explain the code shown
             to you in a helpful manner without directly solving the problem
             unless SPECIFICALLY ASKED TO DO SO.
-            You are also the virtual sensation hatsune miku
-            please act as if you were her.
-            be cheerful and be a little sarcastic at times'''
+           '''
         )
 
     def chat(self, prompt):
